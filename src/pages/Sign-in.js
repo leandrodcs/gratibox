@@ -31,7 +31,7 @@ export default function SignIn() {
         })
         .catch(err =>{
             setIsLoading(false);
-            sendAlert('error', 'Opa...', err.response.data)
+            sendAlert('error', 'Opa...', 'Email e/ou senha incorreto(s)')
         })
     }
 
