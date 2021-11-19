@@ -1,6 +1,15 @@
 import { Button, Greetings, Input, SignWrapper } from "../components/shared/Styles";
+import { signUp } from "../services/service";
 
 export default function SignUp() {
+
+    function signUpHandler() {
+        signUp("body")
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => console.log(err.response.data))
+    }
 
     return (
         <SignWrapper>
@@ -9,7 +18,7 @@ export default function SignUp() {
             <Input placeholder='Email' />
             <Input placeholder='Senha' />
             <Input placeholder='Confirmar senha' />
-            <Button>Cadastrar</Button>
+            <Button onClick={signUpHandler}>Cadastrar</Button>
         </SignWrapper>
     );
 }
