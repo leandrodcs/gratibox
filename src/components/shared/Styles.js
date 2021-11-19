@@ -12,6 +12,9 @@ const Button = styled.button`
     line-height: 42px;
     text-align: center;
     margin-top: 60px;
+    :disabled {
+        opacity: 0.8;
+    }
 `;
 
 const Input = styled.input`
@@ -28,6 +31,9 @@ const Input = styled.input`
     ::placeholder {
         color: rgba(96, 72, 72, 0.4);
     }
+    :disabled {
+            opacity: 0.8;
+    }
 `;
 
 const Greetings = styled.p`
@@ -38,7 +44,7 @@ const Greetings = styled.p`
     margin-bottom: 38px;
 `;
 
-const SignWrapper = styled.main`
+const FormWrapper = styled.form`
     display: flex;
     flex-direction: column;
     padding: 100px 25px 0px 25px;
@@ -52,5 +58,5 @@ export {
     Button,
     Input,
     Greetings,
-    SignWrapper,
+    FormWrapper,
 }
