@@ -9,7 +9,7 @@ export default function Welcome() {
         history.push(whereTo);
     }
     return (
-        <PageStyle>
+        <Wrapper>
             <Greetings>Bem vindo ao GratiBox</Greetings>
             <Description>Receba em casa um box com chás, produtos organicos, incensos e muito mais...</Description>
             <Image src={image} alt='Welcome'/>
@@ -17,7 +17,7 @@ export default function Welcome() {
                 <Button onClick={() => relocate('/sign-up')} top='-45px' background='#8C97EA'>Quero começar</Button>
                 <Button onClick={() => relocate('/sign-in')} top='5px' background='inherit'>Já sou grato</Button>
             </Filler>
-        </PageStyle>
+        </Wrapper>
     );
 }
 
@@ -61,7 +61,7 @@ const Description = styled.p`
     padding: 0 16px;
 `;
 
-const PageStyle = styled.main`
+const Wrapper = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
