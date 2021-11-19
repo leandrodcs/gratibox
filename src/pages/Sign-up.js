@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Loader from "react-loader-spinner";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import { sendAlert } from "../components/shared/Alerts";
 import { Button, Greetings, Input, FormWrapper } from "../components/shared/Styles";
 import { signUp } from "../services/service";
@@ -44,6 +45,7 @@ export default function SignUp() {
             <Input placeholder='Senha' type='password' value={password} onChange={(e) => setPassword(e.target.value)} disabled={isLoading}/>
             <Input placeholder='Confirmar senha' type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} disabled={isLoading}/>
             <Button type='submit' disabled={isLoading}>{isLoading?<Loader type="ThreeDots" color="#FFFFFF" height={13} /> : `Cadastrar`}</Button>
+            <Link to='/sign-in'>Já sou grato</Link>
         </FormWrapper>
     );
 }
