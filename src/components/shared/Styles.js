@@ -52,6 +52,14 @@ const FormWrapper = styled.form`
     align-items: center;
     text-align: center;
     gap: 8px;
+    a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        margin-top: 20px;
+    }
 `;
 
 export {
