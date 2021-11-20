@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
-import image from '../assets/image05.webp';
+import image from '../assets/welcomeImg.webp';
 
 export default function Welcome() {
     const history = useHistory();
