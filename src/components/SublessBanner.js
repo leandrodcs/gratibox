@@ -4,9 +4,11 @@ import image01 from "../assets/homeImg01.jpg";
 import image02 from "../assets/homeImage02.jpg";
 
 import styled from "styled-components";
+import { useHistory } from "react-router";
 
 export default function SublessBanner() {
     const {user} = useContext(UserContext);
+    const history = useHistory();
 
     return (
         <>
@@ -15,12 +17,12 @@ export default function SublessBanner() {
             <Banner>
                 <Image src={image01} alt="meditation"/>
                 <Description>Você recebe um box por semana. Ideal para quem quer exercer a gratidão todos os dias.</Description>
-                <Button>Assinar</Button>
+                <Button onClick={() => history.push('/subscribe')}>Assinar</Button>
             </Banner>
             <Banner>
                 <Image src={image02} alt="meditation"/>
                 <Description>Você recebe um box por mês.<br/><br/> Ideal para queme está começando agora.</Description>
-                <Button>Assinar</Button>
+                <Button onClick={() => history.push('/subscribe')}>Assinar</Button>
             </Banner>
         </>
     );

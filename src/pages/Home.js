@@ -10,7 +10,6 @@ export default function Home() {
     const [sub, setSub] = useState({});
     const {user} = useContext(UserContext);
     const history = useHistory();
-    console.log(user);
 
     useEffect(() => {
         if (!user.token) return history.push('/');
@@ -18,11 +17,9 @@ export default function Home() {
         getSubscription(user.token)
         .then(res => {
             if (res.status === 204) {
-                console.log("vazio")
                 return
             }
             setSub(res.data);
-            console.log(res);
         })
         .catch(err => {
             console.log(err);
@@ -30,9 +27,9 @@ export default function Home() {
     }, [history, user.token]);
     return (
         <Wrapper>
-        {false
+        {sub.entryDate
         ? 
-            <SubBanner />
+            <SubBanner sub={sub}/>
         : 
             <SublessBanner />
         }
@@ -41,9 +38,8 @@ export default function Home() {
 }
 
 const Wrapper = styled.main`
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center; */
     padding: 0 10px;
     color: #FFFFFF;
 `;
