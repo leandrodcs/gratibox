@@ -52,6 +52,8 @@ const FormWrapper = styled.form`
     align-items: center;
     text-align: center;
     gap: 8px;
+    max-width: 500px;
+    margin: 0 auto;
     a {
         color: #FFFFFF;
         text-decoration: none;

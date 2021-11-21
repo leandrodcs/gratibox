@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
-import image from '../assets/image05.webp';
+import image from '../assets/welcomeImg.webp';
 
 export default function Welcome() {
     const history = useHistory();
@@ -68,6 +68,8 @@ const Wrapper = styled.main`
     text-align: center;
     color: #FFFFFF;
     height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
 `;
 
 const Image = styled.img`
