@@ -38,8 +38,10 @@ export default function Home() {
 }
 
 const Wrapper = styled.main`
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     padding: 0 10px;
     color: #FFFFFF;
+    margin: 0 auto;
 `;

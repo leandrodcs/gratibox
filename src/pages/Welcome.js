@@ -68,6 +68,8 @@ const Wrapper = styled.main`
     text-align: center;
     color: #FFFFFF;
     height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
 `;
 
 const Image = styled.img`
