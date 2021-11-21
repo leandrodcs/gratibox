@@ -1,16 +1,16 @@
 import dayjs from "dayjs";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useHistory } from "react-router";
 import styled from "styled-components";
 import image from "../assets/subscribeImg.jpg";
 import UserContext from "../contexts/UserContext";
 import 'dayjs/locale/pt-br.js';
+import { informFutureDeliveryDates } from "../Utils/utils";
 
 export default function SubBanner({sub}) {
     const {user} = useContext(UserContext);
+    const [deliveryDates, setDeliveryDates] = useState(informFutureDeliveryDates(sub.deliveryDate))
     const history = useHistory();
-    console.log(sub);
-    console.log(dayjs(sub.entryDate).locale('pt-br').format('DD/MM/YYYY'))
 
     return (
         <>
@@ -21,12 +21,10 @@ export default function SubBanner({sub}) {
                 <InfoTitle>Plano: <Info>{parseFloat(sub.deliveryDate)?"Mensal":"Semanal"}</Info></InfoTitle>
                 <InfoTitle>Data da assinatura: <Info>{dayjs(sub.entryDate).locale('pt-br').format('DD/MM/YYYY')}</Info></InfoTitle>
                 <InfoTitle>Próximas entregas:<br/>
-                    <DeliveryDate>dd/mm/aa</DeliveryDate><br/>
-                    <DeliveryDate>dd/mm/aa</DeliveryDate><br/>
-                    <DeliveryDate>dd/mm/aa</DeliveryDate><br/>
+                    {deliveryDates.map(date => <><DeliveryDate>{date}</DeliveryDate><br/></>)}
                 </InfoTitle>
                 <InfoTitle>
-                {sub.products.map(product => <Info>{product}</Info>)}
+                {sub.products.map(product => <Info key={product}>{product}</Info>)}
                 </InfoTitle>
             </Banner>
             <Button onClick={() => history.push('/feedback')}>Avaliar entregas</Button>
@@ -38,7 +36,6 @@ const DeliveryDate = styled.span`
     color: #E63C80;
     margin-left: 38px;
 `;
-
 
 const Info = styled.span`
     color: #E63C80;
