@@ -73,6 +73,15 @@ const Wrapper = styled.main`
     margin: 0 auto;
 `;
 
+const SubWrapper = styled.main`
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    color: #FFFFFF;
+    margin: 0 auto 70px 0;
+`;
+
 const Title = styled.h1`
     font-size: 26px;
     line-height: 30px;
@@ -126,6 +135,7 @@ export {
     Greetings,
     FormWrapper,
     Wrapper,
+    SubWrapper,
     Title,
     SubTitle,
     Banner,

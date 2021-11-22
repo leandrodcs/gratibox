@@ -54,6 +54,6 @@ const Button = styled.button`
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    margin: 30px auto 15px auto;
+    margin: 30px auto 30px auto;
     border: none;
 `;

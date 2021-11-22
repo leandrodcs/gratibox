@@ -69,6 +69,6 @@ const Button = styled.button`
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    margin: 20px auto 10px auto;
+    margin: 20px auto 30px auto;
     border: none;
 `;

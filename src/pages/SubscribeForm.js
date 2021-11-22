@@ -1,7 +1,7 @@
 import image from "../assets/subscribeImg.jpg";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext";
-import { Banner, SubTitle, Title, Wrapper, Image } from "../components/shared/Styles";
+import { Banner, SubTitle, Title, Image, SubWrapper } from "../components/shared/Styles";
 import FirstSubForm from "../components/FirstSubForm";
 import SecondSubForm from "../components/SecondSubForm";
 import { postSubscription } from "../services/service";
@@ -48,7 +48,7 @@ export default function SubscribeForm() {
     }
 
     return (
-        <Wrapper>
+        <SubWrapper>
             <Title>Bom te ver por aqui, {user.name}.</Title>
             <SubTitle>"Agradecer é arte de atrair coisas boas"</SubTitle>
             <Banner>
@@ -79,6 +79,6 @@ export default function SubscribeForm() {
                     />
                 }
             </Banner>
-        </Wrapper>
+        </SubWrapper>
     );
 }
