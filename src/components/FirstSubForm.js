@@ -82,7 +82,7 @@ const Items = styled.div`
     flex-wrap: wrap;
     font-weight: 400;
     column-gap: 60px;
-    row-gap: 20px;
+    row-gap: 10px;
     margin-bottom: 10px;
 `;
 
@@ -113,7 +113,7 @@ const Checks = styled.div`
     font-weight: 700;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     border: 1px solid #B5ADBC;
 `;
 
@@ -139,5 +139,6 @@ const Form = styled.form`
         color: #4D65A8;
         font-weight: 700;
         font-size: 18px;
+        opacity: 0.7;
     }
 `;

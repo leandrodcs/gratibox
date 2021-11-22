@@ -28,11 +28,11 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
     }
     return (
         <Form onSubmit={secondFormHandler} isLoading={isLoading} >
-            <TextField inputProps={{ maxLength: 35 }} required value={fullName} onChange={(e) => setFullName(e.target.value)} label="Nome completo"/>
-            <TextField inputProps={{ maxLength: 35 }} required value={address} onChange={(e) => setAddress(e.target.value)} label="Endereço, Ex: Rua Primavera 300"/>
-            <TextField required value={zipCode} onChange={zipCodeHandler} label="CEP, Ex: XXXXX-XXX"/>
+            <TextField inputProps={{ maxLength: 35 }} required value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome completo"/>
+            <TextField inputProps={{ maxLength: 35 }} required value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Endereço, Ex: Rua Primavera 300"/>
+            <TextField required value={zipCode} onChange={zipCodeHandler} placeholder="CEP, Ex: XXXXX-XXX"/>
             <LastRow>
-                <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} label="Cidade"/>
+                <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Cidade"/>
                 <FormControl required className="state">
                     <InputLabel className="label" id="state-selection">Estado</InputLabel>
                     <Select 
@@ -89,6 +89,7 @@ const Form = styled.form`
         color: #4D65A8;
         font-weight: 700;
         font-size: 18px;
+        opacity: 0.7;
     }
     input {
         width: 100%;
@@ -101,5 +102,11 @@ const Form = styled.form`
         font-size: 18px;
         line-height: 21px;
         color: #4D65A8;
+        ::placeholder {
+            color: #4D65A8;
+            opacity: 1;
+            font-weight: 700;
+            opacity: 0.7;
+        }
     }
 `;
