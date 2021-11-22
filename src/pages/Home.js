@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import LoadPage from "../components/LoadPage";
 import { Wrapper } from "../components/shared/Styles";
 import SubBanner from "../components/SubBanner";
 import SublessBanner from "../components/SublessBanner";
@@ -10,21 +11,29 @@ export default function Home() {
     const [sub, setSub] = useState({});
     const {user} = useContext(UserContext);
     const history = useHistory();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (!user.token) return history.push('/');
-
         getSubscription(user.token)
         .then(res => {
+            setIsLoading(false);
             if (res.status === 204) {
                 return
             }
             setSub(res.data);
         })
         .catch(err => {
+            setIsLoading(false);
             console.log(err);
         })
     }, [history, user.token]);
+
+    if (isLoading) {
+        return (
+            <LoadPage />
+        );
+    }
     return (
         <Wrapper>
         {sub.entryDate
