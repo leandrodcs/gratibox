@@ -24,7 +24,7 @@ function getSubscription(token) {
 }
 
 function postSubscription(token, body) {
-    return axios.get(`${BASE_URL}/subscription`, body, createConfig(token))
+    return axios.post(`${BASE_URL}/subscription`, body, createConfig(token))
 }
 
 
