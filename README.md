@@ -61,7 +61,7 @@ CREATE DATABASE gratibox
 
 Visitors can `Subscribe` to two different plans, being them `monthly` or `weekly`.
 
-Both plans can provide you with three different kinds of products, being them: `teas`, `organic products` and `incense`. You can from one up to three of those options!
+Both plans can provide you with three different kinds of products, being them: `teas`, `organic products` and `incense`. You are free to choose the one you want or even all of them.
 
 The `monthly` subscription will give you one box per month, the `weekly` subscription will give you one box per week.
 
