@@ -29,6 +29,7 @@ export default function SignUp() {
         signUp(body)
         .then(res => {
             setIsLoading(false);
+            sendAlert('success', 'Bem-vindo', 'Cadastro realizado com sucesso.')
             history.push('/sign-in');
         })
         .catch(err => {
