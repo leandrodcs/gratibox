@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import LoadPage from "../components/LoadPage";
+import { sendAlert } from "../components/shared/Alerts";
 import { Wrapper } from "../components/shared/Styles";
 import SubBanner from "../components/SubBanner";
 import SublessBanner from "../components/SublessBanner";
@@ -25,7 +26,7 @@ export default function Home() {
         })
         .catch(err => {
             setIsLoading(false);
-            console.log(err);
+            sendAlert('error', '', 'Houve um erro inesperado ao carregar sua inscrição, tente novamente mais tarde.')
         })
     }, [history, user.token]);
 

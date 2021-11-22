@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { handleCheckBox } from "../Utils/utils";
-import { AiOutlineArrowDown, AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import styled from "styled-components";
 import { sendAlert } from './shared/Alerts';
 import { SubButton } from './shared/Styles';
@@ -59,21 +59,15 @@ export default function FirstSubForm({plan, setPlan, deliveryDate, setDeliveryDa
                 <p>Quero receber</p>
                 <Items>
                     <Item>
-                        <Check onClick={(e) => handleCheckBox(e, 1, products, setProducts)}>
-                            {products.includes(1)?<AiOutlineCheck />: ""}
-                        </Check>
+                        <Check onClick={(e) => handleCheckBox(e, 1, products, setProducts)} checked={products.includes(1)}/>
                         <p>Chás</p>
                     </Item>
                     <Item>
-                        <Check onClick={(e) => handleCheckBox(e, 2, products, setProducts)}>
-                            {products.includes(2)?<AiOutlineCheck />: ""}
-                        </Check>
+                        <Check onClick={(e) => handleCheckBox(e, 2, products, setProducts)} checked={products.includes(2)}/>
                         <p>Incensos</p>
                     </Item>
                     <Item>
-                        <Check onClick={(e) => handleCheckBox(e, 3, products, setProducts)}>
-                            {products.includes(3)?<AiOutlineCheck />: ""}
-                        </Check>
+                        <Check onClick={(e) => handleCheckBox(e, 3, products, setProducts)} checked={products.includes(3)}/>
                         <p>Produtos Orgânicos</p>
                     </Item>
                 </Items>
@@ -100,13 +94,11 @@ const Item = styled.div`
 const Check = styled.button`
     width: 20px;
     height: 20px;
-    background: #FFFFFF;
+    background: ${({checked}) => checked ? '#4D65A8' : '#FFFFFF'};
     border: none;
     display: flex;
     svg {
         color: #4D65A8;
-        width: 100%;
-        height: 100%;
     }
 `;
 
@@ -122,6 +114,7 @@ const Checks = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border: 1px solid #B5ADBC;
 `;
 
 const Form = styled.form`
