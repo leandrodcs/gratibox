@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { handleCheckBox } from "../Utils/utils";
-import { AiOutlineArrowDown, AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import styled from "styled-components";
 import { sendAlert } from './shared/Alerts';
 import { SubButton } from './shared/Styles';
