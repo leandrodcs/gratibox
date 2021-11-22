@@ -54,12 +54,12 @@ CREATE DATABASE gratibox
 ```
 6. Inside the created database, create tables using the dump included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>.
 
-7. Connect to the created database using the .env.example included in the back-end repo, to make it easy, name your env file like so ".env.dev" <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>.
+7. Connect to the created database using the .env.example included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>, to make it easy, name your .env file like so ".env.dev".
 8. On the back-end repo run the server connected to the database you just created using the following command.
 ```sh
 npm run dev
 ```
-9. Now on the fron-end repo using the same command and you should be good.
+9. Now on the fron-end repo use the same command you just used on step 8 and you should be good.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
