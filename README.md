@@ -52,7 +52,7 @@ git clone https://github.com/leandrodcs/gratibox-back.git
 ```sh
 CREATE DATABASE gratibox
 ```
-6. Inside the created database, create tables using the dump included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>.
+6. Inside the created database, create tables using the dump included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/dump.sql">here</a>.
 
 7. Connect to the created database using the .env.example included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>, to make it easy, name your .env file like so ".env.dev".
 8. On the back-end repo run the server connected to the database you just created using the following command.
