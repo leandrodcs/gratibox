@@ -28,11 +28,11 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
     }
     return (
         <Form onSubmit={secondFormHandler} isLoading={isLoading} >
-            <TextField inputProps={{ maxLength: 35 }} required value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome completo"/>
-            <TextField inputProps={{ maxLength: 35 }} required value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Endereço, Ex: Rua Primavera 300"/>
-            <TextField required value={zipCode} onChange={zipCodeHandler} placeholder="CEP, Ex: XXXXX-XXX"/>
+            <TextField inputProps={{ maxLength: 35 }} required value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome completo *"/>
+            <TextField inputProps={{ maxLength: 35 }} required value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Endereço *, Ex: Rua Primavera 300"/>
+            <TextField required value={zipCode} onChange={zipCodeHandler} placeholder="CEP *, Ex: XXXXX-XXX"/>
             <LastRow>
-                <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Cidade"/>
+                <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Cidade *"/>
                 <FormControl required className="state">
                     <InputLabel className="label" id="state-selection">Estado</InputLabel>
                     <Select 
