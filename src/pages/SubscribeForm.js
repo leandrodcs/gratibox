@@ -1,5 +1,5 @@
 import image from "../assets/subscribeImg.jpg";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext";
 import { Banner, SubTitle, Title, Wrapper, Image } from "../components/shared/Styles";
 import FirstSubForm from "../components/FirstSubForm";
@@ -20,6 +20,10 @@ export default function SubscribeForm() {
     const [city, setCity] = useState("");
     const [stateId, setStateId] = useState("");
     const history = useHistory();
+
+    useEffect(() => {
+        if (!user.token) return history.push('/');
+    })
 
     function submitHandler(setIsLoading) {
         const body = {
