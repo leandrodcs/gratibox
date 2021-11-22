@@ -13,12 +13,24 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
         e.preventDefault();
         submitHandler(setIsLoading)
     }
-    console.log(isLoading);
+
+    function zipCodeHandler(e) {
+        if(e.target.value.length === 5) {
+            if (!zipCode.includes('-')) {
+                return setZipCode(e.target.value + '-');
+            }
+            else {
+                return setZipCode(e.target.value.replace('-',''));
+            }
+        } 
+        if(e.target.value.length>9) return;
+        setZipCode(e.target.value);
+    }
     return (
         <Form onSubmit={secondFormHandler} isLoading={isLoading} >
             <TextField required value={fullName} onChange={(e) => setFullName(e.target.value)} label="Nome completo"/>
             <TextField required value={address} onChange={(e) => setAddress(e.target.value)} label="Endereço, Ex: Rua Primavera 300"/>
-            <TextField required value={zipCode} onChange={(e) => setZipCode(e.target.value)} label="CEP, Ex: XXXXX-XXX"/>
+            <TextField required value={zipCode} onChange={zipCodeHandler} label="CEP, Ex: XXXXX-XXX"/>
             <LastRow>
                 <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} label="Cidade"/>
                 <FormControl required className="state">
