@@ -38,6 +38,31 @@ function informFutureDeliveryDates(deliveryDate) {
     }
 }
 
+function handleCheckBox(e, product, products, setProducts) {
+    e.preventDefault();
+    if (products.includes(product)) {
+        setProducts(products.filter(p => p !== product));
+    } else {
+        setProducts([...products, product]);
+    }
+}
+
+const getStates = () => {
+    return [
+        "Acre", "Alagoas", "Amapá", 
+        "Amazonas", "Bahia", "Ceará", 
+        "Espirito Santo", "Goiás", "Maranhão", 
+        "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais",
+        "Pará", "Paraiba", "Paraná",
+        "Pernambuco", "Piauí", "Rio de Janeiro",
+        "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia",
+        "Roraima", "Santa Catarina", "São Paulo",
+        "Sergipe", "Tocantins", "Distrito Federal"
+    ];
+} 
+
 export {
     informFutureDeliveryDates,
+    handleCheckBox,
+    getStates,
 };

@@ -64,9 +64,69 @@ const FormWrapper = styled.form`
     }
 `;
 
+const Wrapper = styled.main`
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    color: #FFFFFF;
+    margin: 0 auto;
+`;
+
+const Title = styled.h1`
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 700;
+    margin: 40px 0 22px 8px;
+`;
+
+const SubTitle = styled.h2`
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 300;
+    margin: 0px 0px 10px 8px;
+`;
+
+const Banner = styled.div`
+    background: #FFFFFF;
+    border-radius: 25px;
+    padding: 0 22px;
+    display: flex;
+    flex-direction: column;
+`;
+
+const Image = styled.img`
+    border-radius: 25px;
+    width: 100%;
+`;
+
+const SubButton = styled.button`
+    background: #8C97EA;
+    border-radius: 10px;
+    width: 202px;
+    height: 39px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    border: none;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: -70px;
+`;
+
 export {
     Button,
     Input,
     Greetings,
     FormWrapper,
+    Wrapper,
+    Title,
+    SubTitle,
+    Banner,
+    Image,
+    SubButton,
 }

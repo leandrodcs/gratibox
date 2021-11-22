@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import styled from "styled-components";
+import { Wrapper } from "../components/shared/Styles";
 import SubBanner from "../components/SubBanner";
 import SublessBanner from "../components/SublessBanner";
 import UserContext from "../contexts/UserContext";
@@ -36,12 +36,3 @@ export default function Home() {
         </Wrapper>
     );
 }
-
-const Wrapper = styled.main`
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    color: #FFFFFF;
-    margin: 0 auto;
-`;

@@ -78,7 +78,6 @@ const Banner = styled.div`
     padding: 0 22px;
     display: flex;
     flex-direction: column;
-    color: black;
 `;
 
 const Image = styled.img`
