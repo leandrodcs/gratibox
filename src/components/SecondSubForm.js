@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { SubButton } from "./shared/Styles";
 import { getStates } from "../Utils/utils";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { sendAlert } from "./shared/Alerts";
 
 export default function SecondSubForm({fullName, setFullName, address, setAddress, zipCode, setZipCode, city, setCity, stateId, setStateId, submitHandler}) {
     function secondFormHandler(e) {
@@ -17,7 +16,7 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
             <TextField required value={zipCode} onChange={(e) => setZipCode(e.target.value)} label="CEP"/>
             <LastRow>
                 <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} label="Cidade"/>
-                <FormControl className="state">
+                <FormControl required className="state">
                     <InputLabel className="label" id="state-selection">Estado</InputLabel>
                     <Select 
                         labelId="state-selection"

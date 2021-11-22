@@ -4,6 +4,9 @@ import UserContext from "../contexts/UserContext";
 import { Banner, SubTitle, Title, Wrapper, Image } from "../components/shared/Styles";
 import FirstSubForm from "../components/FirstSubForm";
 import SecondSubForm from "../components/SecondSubForm";
+import { postSubscription } from "../services/service";
+import { useHistory } from "react-router";
+import { sendAlert } from "../components/shared/Alerts";
 
 export default function SubscribeForm() {
     const {user} = useContext(UserContext);
@@ -16,9 +19,26 @@ export default function SubscribeForm() {
     const [zipCode, setZipCode] = useState("");
     const [city, setCity] = useState("");
     const [stateId, setStateId] = useState("");
+    const history = useHistory();
 
     function submitHandler() {
-
+        const body = {
+            fullName,
+            address,
+            zipCode,
+            city,
+            stateId,
+            deliveryDate,
+            products,
+        }
+        postSubscription(user.token, body)
+        .then(res => {
+            sendAlert('success', 'Parabéns!', 'Agora você é grato :)')
+            history.push('/home');
+        })
+        .catch(err => {
+            sendAlert('error', 'Opa...', err.response.data)
+        })
     }
 
     return (
@@ -27,7 +47,7 @@ export default function SubscribeForm() {
             <SubTitle>"Agradecer é arte de atrair coisas boas"</SubTitle>
             <Banner>
                 <Image src={image} alt="meditation"/>
-                {false ?
+                {!changePage ?
                     <FirstSubForm 
                         plan={plan}
                         setPlan={setPlan}

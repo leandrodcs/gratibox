@@ -8,12 +8,6 @@ import { SubButton } from './shared/Styles';
 export default function FirstSubForm({plan, setPlan, deliveryDate, setDeliveryDate, products, setProducts, setChangePage}) {
     function firstFormHandler(e) {
         e.preventDefault();
-        if (plan !== "Semanal" && plan !== "Mensal") {
-            return sendAlert('error', '', 'Você precisa escolher seu plano.')
-        }
-        if (deliveryDate === "") {
-            return sendAlert('error', '', 'Você precisa escolher uma data de entrega.')
-        }
         if (!products.length) {
             return sendAlert('error', '', 'Você precisa escolher ao menos um produto.')
         }
@@ -28,7 +22,7 @@ export default function FirstSubForm({plan, setPlan, deliveryDate, setDeliveryDa
 
     return (
         <Form onSubmit={firstFormHandler}>
-            <FormControl>
+            <FormControl required>
                 <InputLabel className="label" id="plan-selection">Plano</InputLabel>
                 <Select 
                     labelId="plan-selection"
@@ -42,7 +36,7 @@ export default function FirstSubForm({plan, setPlan, deliveryDate, setDeliveryDa
                     <MenuItem value="Semanal">Semanal</MenuItem>
                 </Select>
             </FormControl>
-            <FormControl>
+            <FormControl required>
                 <InputLabel className="label" id="day-selection">{plan !== "" ? "Entrega" : "Escolha um plano..."}</InputLabel>
                 <Select 
                     IconComponent={AiOutlineArrowDown}
