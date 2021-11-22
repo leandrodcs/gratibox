@@ -79,7 +79,7 @@ const SubWrapper = styled.main`
     flex-direction: column;
     padding: 0 10px;
     color: #FFFFFF;
-    margin: 0 auto 70px 0;
+    margin: 0 auto 70px auto;
 `;
 
 const Title = styled.h1`
