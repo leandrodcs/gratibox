@@ -59,7 +59,7 @@ CREATE DATABASE gratibox
 ```sh
 npm run dev
 ```
-9. Now on the fron-end repo use the same command and you should be good.
+9. Now on the fron-end repo using the same command and you should be good.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
