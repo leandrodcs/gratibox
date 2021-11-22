@@ -2,7 +2,7 @@ import { useContext } from "react";
 import UserContext from "../contexts/UserContext";
 import image01 from "../assets/homeImg01.jpg";
 import image02 from "../assets/homeImage02.jpg";
-
+import { SubTitle, Title, Image } from "./shared/Styles";
 import styled from "styled-components";
 import { useHistory } from "react-router";
 
@@ -28,20 +28,6 @@ export default function SublessBanner() {
     );
 }
 
-const Title = styled.h1`
-    font-size: 26px;
-    line-height: 30px;
-    font-weight: 700;
-    margin: 60px 0 22px 8px;
-`;
-
-const SubTitle = styled.h2`
-    font-size: 18px;
-    line-height: 21px;
-    font-weight: 300;
-    margin: 0px 0px 30px 8px;
-`;
-
 const Banner = styled.div`
     background: #E5CDB3;
     border-radius: 25px;
@@ -49,11 +35,6 @@ const Banner = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-`;
-
-const Image = styled.img`
-    border-radius: 25px;
-    width: 100%;
 `;
 
 const Description = styled.p`
@@ -73,6 +54,6 @@ const Button = styled.button`
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    margin: 30px auto 15px auto;
+    margin: 30px auto 30px auto;
     border: none;
 `;

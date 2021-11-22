@@ -6,6 +6,7 @@ import SignIn from "./pages/Sign-in";
 import { useState } from "react";
 import UserContext from "./contexts/UserContext";
 import Home from "./pages/Home";
+import SubscribeForm from "./pages/SubscribeForm";
 
 export default function App() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || {});
@@ -18,7 +19,7 @@ export default function App() {
                     <Route exact path="/sign-up" render={() => <SignUp />}/>
                     <Route exact path="/sign-in" render={() => <SignIn />}/>
                     <Route exact path="/home"  render={() => <Home />}/>
-                    <Route exact path="/subscribe" render={() => <>SubForm</>} />
+                    <Route exact path="/subscribe" render={() => <SubscribeForm />} />
                     <Route path="*">
                         <Redirect to="/" />
                     </Route>
