@@ -28,8 +28,8 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
     }
     return (
         <Form onSubmit={secondFormHandler} isLoading={isLoading} >
-            <TextField required value={fullName} onChange={(e) => setFullName(e.target.value)} label="Nome completo"/>
-            <TextField required value={address} onChange={(e) => setAddress(e.target.value)} label="Endereço, Ex: Rua Primavera 300"/>
+            <TextField inputProps={{ maxLength: 35 }} required value={fullName} onChange={(e) => setFullName(e.target.value)} label="Nome completo"/>
+            <TextField inputProps={{ maxLength: 35 }} required value={address} onChange={(e) => setAddress(e.target.value)} label="Endereço, Ex: Rua Primavera 300"/>
             <TextField required value={zipCode} onChange={zipCodeHandler} label="CEP, Ex: XXXXX-XXX"/>
             <LastRow>
                 <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} label="Cidade"/>
