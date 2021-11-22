@@ -36,7 +36,7 @@ npm install npm@latest -g
 ```sh
 mkdir gratibox
 ```
-2. Clone the front-end repo
+2. Clone the front-end repo (within the /gratibox folder)
 ```sh
 git clone https://github.com/leandrodcs/gratibox-front.git
 ```
@@ -44,22 +44,26 @@ git clone https://github.com/leandrodcs/gratibox-front.git
 ```sh
 npm install
 ```
-4. Clone the back-end repo (within the /gratibox folder for semantics)
+4. Clone the back-end repo (within the /gratibox folder)
 ```sh
 git clone https://github.com/leandrodcs/gratibox-back.git
 ```
-5. Create a database using the command below via postgres
+5. Install NPM packages for the back-end repo
+```sh
+npm install
+```
+6. Create a database using the command below via postgres
 ```sh
 CREATE DATABASE gratibox
 ```
-6. Inside the created database, create tables using the dump included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/dump.sql">here</a>.
+7. Inside the created database, create tables using the dump included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/dump.sql">here</a>.
 
-7. Connect to the created database using the .env.example included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>, to make it easy, name your .env file like so ".env.dev".
-8. On the back-end repo run the server connected to the database you just created using the following command.
+8. Connect to the created database using the .env.example included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>, to make it easy, name your .env file like so ".env.dev".
+9. On the back-end repo run the server connected to the database you just created using the following command.
 ```sh
 npm run dev
 ```
-9. Now on the fron-end repo use the same command you just used on step 8 and you should be good.
+10. Now on the fron-end repo use the same command you just used on step 8 and you should be good.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
