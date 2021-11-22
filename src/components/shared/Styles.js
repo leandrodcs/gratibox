@@ -78,6 +78,8 @@ const Title = styled.h1`
     line-height: 30px;
     font-weight: 700;
     margin: 40px 0 22px 8px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
 `;
 
 const SubTitle = styled.h2`
