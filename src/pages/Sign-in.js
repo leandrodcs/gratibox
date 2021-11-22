@@ -39,7 +39,8 @@ export default function SignIn() {
         if(user.email) {
             signInHandler();
         }
-    }, [user, signInHandler]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user]);
 
 
 

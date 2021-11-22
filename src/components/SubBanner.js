@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { useContext } from "react";
-import { useHistory } from "react-router";
 import styled from "styled-components";
 import image from "../assets/subscribeImg.jpg";
 import UserContext from "../contexts/UserContext";
@@ -11,8 +10,6 @@ import { Banner, SubTitle, Title, Image } from "./shared/Styles";
 export default function SubBanner({sub}) {
     const {user} = useContext(UserContext);
     const deliveryDates = informFutureDeliveryDates(sub.deliveryDate);
-    const history = useHistory();
-
     return (
         <>
             <Title>Bom te ver por aqui, {user.name}.</Title>
@@ -33,7 +30,7 @@ export default function SubBanner({sub}) {
                 {sub.products.map((product, i) => <Info key={i}>{product}</Info>)}
                 </InfoTitle>
             </Banner>
-            <Button onClick={() => history.push('/feedback')}>Avaliar entregas</Button>
+            <Button>Avaliar entregas</Button>
         </>
     );
 }
