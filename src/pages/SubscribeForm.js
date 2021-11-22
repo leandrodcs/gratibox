@@ -21,7 +21,7 @@ export default function SubscribeForm() {
     const [stateId, setStateId] = useState("");
     const history = useHistory();
 
-    function submitHandler() {
+    function submitHandler(setIsLoading) {
         const body = {
             fullName,
             address,
@@ -34,10 +34,12 @@ export default function SubscribeForm() {
         postSubscription(user.token, body)
         .then(res => {
             sendAlert('success', 'Parabéns!', 'Agora você é grato :)')
+            setIsLoading(false);
             history.push('/home');
         })
         .catch(err => {
             sendAlert('error', 'Opa...', err.response.data)
+            setIsLoading(false);
         })
     }
 

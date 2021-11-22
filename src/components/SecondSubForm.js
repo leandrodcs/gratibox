@@ -3,17 +3,22 @@ import styled from "styled-components";
 import { SubButton } from "./shared/Styles";
 import { getStates } from "../Utils/utils";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { useState } from "react";
+import Loader from "react-loader-spinner";
 
 export default function SecondSubForm({fullName, setFullName, address, setAddress, zipCode, setZipCode, city, setCity, stateId, setStateId, submitHandler}) {
+    const [isLoading, setIsLoading] = useState(false);
     function secondFormHandler(e) {
+        setIsLoading(true);
         e.preventDefault();
-        submitHandler();
+        submitHandler(setIsLoading)
     }
+    console.log(isLoading);
     return (
-        <Form onSubmit={secondFormHandler}>
+        <Form onSubmit={secondFormHandler} isLoading={isLoading} >
             <TextField required value={fullName} onChange={(e) => setFullName(e.target.value)} label="Nome completo"/>
             <TextField required value={address} onChange={(e) => setAddress(e.target.value)} label="Endereço, Ex: Rua Primavera 300"/>
-            <TextField required value={zipCode} onChange={(e) => setZipCode(e.target.value)} label="CEP"/>
+            <TextField required value={zipCode} onChange={(e) => setZipCode(e.target.value)} label="CEP, Ex: XXXXX-XXX"/>
             <LastRow>
                 <TextField required className="city" value={city} onChange={(e) => setCity(e.target.value)} label="Cidade"/>
                 <FormControl required className="state">
@@ -31,7 +36,7 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
                     </Select>
                 </FormControl>
             </LastRow>
-            <SubButton type="submit">Finalizar</SubButton>
+            <SubButton type="submit">{isLoading ? <Loader type="ThreeDots" color="#FFFFFF" height={13} /> : `Finalizar`}</SubButton>
         </Form>
     );
 }
@@ -49,6 +54,7 @@ const LastRow = styled.div`
 `;
 
 const Form = styled.form`
+    pointer-events: ${({isLoading}) => isLoading?'none':'initial'};
     width: 100%;
     color: #4D65A8;
     display: flex;

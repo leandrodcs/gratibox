@@ -6,6 +6,7 @@ import image from "../assets/subscribeImg.jpg";
 import UserContext from "../contexts/UserContext";
 import 'dayjs/locale/pt-br.js';
 import { informFutureDeliveryDates } from "../Utils/utils";
+import { Banner, SubTitle, Title, Image } from "./shared/Styles";
 
 export default function SubBanner({sub}) {
     const {user} = useContext(UserContext);
@@ -56,33 +57,6 @@ const InfoTitle = styled.p`
         gap: 18px;
         margin: 28px 0 10px 0;
     }
-`;
-
-const Title = styled.h1`
-    font-size: 26px;
-    line-height: 30px;
-    font-weight: 700;
-    margin: 60px 0 22px 8px;
-`;
-
-const SubTitle = styled.h2`
-    font-size: 18px;
-    line-height: 21px;
-    font-weight: 300;
-    margin: 0px 0px 10px 8px;
-`;
-
-const Banner = styled.div`
-    background: #FFFFFF;
-    border-radius: 25px;
-    padding: 0 22px;
-    display: flex;
-    flex-direction: column;
-`;
-
-const Image = styled.img`
-    border-radius: 25px;
-    width: 100%;
 `;
 
 const Button = styled.button`
