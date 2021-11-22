@@ -32,7 +32,7 @@ export default function SecondSubForm({fullName, setFullName, address, setAddres
                         onChange={(e) => setStateId(e.target.value)}
                         autoWidth={true}
                     >
-                        {getStates().map((state, i) => <MenuItem key={i} value={i}>{state}</MenuItem>)}
+                        {getStates().map((state, i) => <MenuItem key={i + 1} value={i + 1}>{state}</MenuItem>)}
                     </Select>
                 </FormControl>
             </LastRow>
