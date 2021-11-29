@@ -17,6 +17,18 @@
   </p>
 </p>
 
+## Technologies
+
+The following tools and frameworks were used in the construction of the project:
+<p>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=informational'>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/react-icons%20-%2320232a.svg?&style=for-the-badge&color=f28dc7&logo=react-icons&logoColor=%2361DAFB'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white'>
+  <img style='margin: 5px;' src='https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white'>
+</p>
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -59,11 +71,15 @@ CREATE DATABASE gratibox
 7. Inside the created database, create tables using the dump included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/dump.sql">here</a>.
 
 8. Connect to the created database using the .env.example included in the back-end repo <a href="https://github.com/leandrodcs/gratibox-back/blob/main/.env.example">here</a>, to make it easy, name your .env file like so ".env.dev".
-9. On the back-end repo run the server connected to the database you just created using the following command.
+
+### Running
+
+1. On the back-end repo run the server connected to the database you just created using the following command.
 ```sh
 npm run dev
 ```
-10. Now on the fron-end repo use the same command you just used on step 8 and you should be good.
+2. Now on the fron-end repo use the same command you just used on step 8 and you should be good.
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
