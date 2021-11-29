@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/leandrodcs/gratibox-front">
-    <img src="https://github.com/driven-exercises/Projeto-GratiBox/blob/a09f21f55810dd55c09230dd88ed027151e81043/image05.webp" alt="Logo" width="auto" height="auto">
+    <img src="./public/gratibox.gif" alt="Logo" width="auto" height="auto">
   </a>
 
   <h3 align="center">Gratibox</h3>
